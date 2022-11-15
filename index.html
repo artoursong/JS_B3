@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="box-header">
+            <span>Data Table With Full Feature</span>
+        </div>
+        <div class="box-body">
+            <div class="data-selection">
+                <div class="show-data">
+                    <label for="">
+                        Show
+                        <select name="select-entries" id="">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                        entries
+                    </label>
+                </div>
+                <div class="search-data">
+                    <label for="">
+                        Search
+                        <input type="text">
+                    </label>
+                </div>
+            </div>
+            <div class="data-table-container">
+                <table>
+                    <tr>
+                        <th>Rendering engine
+                            <div class="icon-container">
+                                <div class="icon">
+                                    <i class="fa-solid fa-up-down"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+                                </div>
+                                <div class="icon  active">
+                                    <i class="fa-solid fa-arrow-down-short-wide"></i>
+                                </div>     
+                            </div>
+                        </th>
+                        <th>Browser
+                            <div class="icon-container">
+                                <div class="icon active">
+                                    <i class="fa-solid fa-up-down"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-arrow-down-short-wide"></i>
+                                </div>     
+                            </div>
+                        </th>
+                        <th>Platform
+                            <div class="icon-container">
+                                <div class="icon active">
+                                    <i class="fa-solid fa-up-down"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-arrow-down-short-wide"></i>
+                                </div>     
+                            </div>
+                        </th>
+                        <th>Engine version
+                            <div class="icon-container">
+                                <div class="icon active">
+                                    <i class="fa-solid fa-up-down"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-arrow-down-short-wide"></i>
+                                </div>     
+                            </div>
+                        </th>
+                        <th>CSS grade
+                            <div class="icon-container">
+                                <div class="icon active">
+                                    <i class="fa-solid fa-up-down"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-arrow-down-short-wide"></i>
+                                </div>     
+                            </div>
+                        </th>
+                    </tr>
+                </table>
+                <div class="paginate-button">
+                    <!-- <li>
+                        <a class ="pre-button"href="">Previous</a>
+                    </li>
+                    <li>
+                        <a class ="next-button"href="">Next</a>
+                    </li> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./data.js"></script>
+    <script src="https://kit.fontawesome.com/bbe5908598.js" crossorigin="anonymous"></script>  
+</body>
+</html>

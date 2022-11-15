@@ -1,0 +1,130 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: "inherit";
+	vertical-align: baseline;
+	font-family:  "Segoe UI", 'Roboto', sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: "Segoe UI", 'Roboto', sans-serif;
+    height: 100vh;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    width: 100%;
+    padding: 0px 15px;
+}
+
+body .box-header {
+    padding: 10px;
+    color: #444;
+}
+
+body .data-selection {
+    padding: 10px;
+    display: flex;
+    width: 100%;
+}
+
+.data-selection .search-data {
+    margin-left: auto;
+    padding: 15px
+}
+
+body .data-table-container {
+    width: 100%;
+    padding: 15px;
+}
+
+
+.data-table-container table {
+    width: 100%;
+
+}
+
+.data-table-container table th {
+    border: 1px solid black;
+    padding: 10px;
+    position: relative;
+}
+
+.data-table-container table td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.icon-container {
+    display: flex;   
+}
+
+.icon-container .icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+}
+
+.icon.active {
+    display: block
+}
+
+.data-table-container .paginate-button {
+    display: flex;
+    list-style: none;
+    margin-top: 20px;
+    position: absolute;
+    right: 50px
+}
+
+.paginate-button li {
+    border: 1px solid black;
+}
+.paginate-button a {
+    padding:10px;
+    cursor: pointer;
+}
+
+
+.paginate-button li {
+
+}
+
