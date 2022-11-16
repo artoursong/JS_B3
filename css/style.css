@@ -93,14 +93,17 @@ body .data-table-container {
 }
 
 .icon-container {
-    display: flex;   
-}
-
-.icon-container .icon {
+    display: flex;
     position: absolute;
     right: 10px;
     top: 10px;
+    cursor: pointer;
+}
+
+.icon-container .icon {
+    
     display: none;
+    
 }
 
 .icon.active {
