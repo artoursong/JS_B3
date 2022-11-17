@@ -1,7 +1,7 @@
 import arrData from "./data.js";
 var dataTable = {
     GLOBAL: {
-        listData: arrData,
+        listData: JSON.parse(JSON.stringify(arrData)),
         set: 0,
         currentPage: 1,
         allPage: 0,
@@ -35,7 +35,7 @@ var dataTable = {
         dataTable.search();
     },
 
-    renderTable: function() {
+    renderTable: function(data) {
         let html = "";
         let index = (dataTable.GLOBAL.currentPage-1) * dataTable.GLOBAL.itemPerPage;
         let dem = dataTable.GLOBAL.itemPerPage;
@@ -51,11 +51,10 @@ var dataTable = {
             dem--;
             if(index >= dataTable.GLOBAL.listData.length) break;
         }
-        $(dataTable.SELECTORS.table).html(html);
-        
+        $(dataTable.SELECTORS.table).html(html);   
     },
-
     renderPageButton: function() {
+        dataTable.GLOBAL.currentPage = 1;
         dataTable.GLOBAL.allPage = dataTable.GLOBAL.listData.length / dataTable.GLOBAL.itemPerPage;
         dataTable.GLOBAL.allPage = Math.ceil(dataTable.GLOBAL.allPage);
         let html = "";
@@ -71,8 +70,8 @@ var dataTable = {
                     <a class ="next-button">Next</a>
                 </li>`
         $(dataTable.SELECTORS.paginate_button).html(html);
+        dataTable.renderTable();
     },
-
     pageChangeEvent: function() {
         $(dataTable.SELECTORS.next_button).on("click", function () {
             let nextPage = dataTable.GLOBAL.currentPage >= dataTable.GLOBAL.allPage ? dataTable.GLOBAL.currentPage : Number(dataTable.GLOBAL.currentPage) + 1;
@@ -90,7 +89,6 @@ var dataTable = {
             dataTable.renderTable();
         })
     },
-
     selectEvent: function() {
         $(dataTable.SELECTORS.select_entries).change(function() {
             dataTable.GLOBAL.itemPerPage = $(dataTable.SELECTORS.select_entries).find(":selected").val();
@@ -148,6 +146,7 @@ var dataTable = {
 
     search: function() {
         $(dataTable.SELECTORS.input_text).keyup(function() {
+            dataTable.GLOBAL.listData = JSON.parse(JSON.stringify(arrData));
             let lengthArray = dataTable.GLOBAL.listData.length;
             let text = $(dataTable.SELECTORS.input_text).val();
             for(let i = 0; i < lengthArray; i++) {
@@ -157,9 +156,17 @@ var dataTable = {
                     && dataTable.GLOBAL.listData[i].platform.toLowerCase().search(text) == -1 
                     && dataTable.GLOBAL.listData[i].engine_version.toLowerCase().search(text) == -1) {
                    dataTable.GLOBAL.listData.splice(i,1);
+                   i--;
+                   lengthArray--;
                 }
             }
-            dataTable.renderTable();
+            if(lengthArray == 0) {
+                let html = "";
+                html += `<div><span>khong co du lieu</span></div>`;
+                $(dataTable.SELECTORS.table).html(html); 
+            }
+            dataTable.sortData();
+            dataTable.renderPageButton();
         })
     }
 
